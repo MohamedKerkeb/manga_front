@@ -1,9 +1,15 @@
 <section id="home" class="py-3">
-    <div class="container">
-        <div class="row d-flex flex-row" >
-            <div class="col-2 m-2 border" *ngFor="let tome of tomes">
-                <a routerLink="../manga" [queryParams]="{id: tome.manga_id}"><img src={{tome.cover}} alt="" class=" w-100"></a>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row d-flex flex-row">
+      <div class="col-2 m-2" *ngFor="let tome of tomes">
+        <img
+          src="{{ tome.cover }}"
+          alt=""
+          class="w-100 rounded"
+          style="min-height: 300px"
+          [routerLink]="['../manga', tome.manga.id]"
+        />
+      </div>
     </div>
+  </div>
 </section>
