@@ -7,7 +7,7 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,11 +15,13 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     SigninComponent,
     SignupComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
   ],
   imports: [
     CommonModule,
-    AccountRoutingModule
-  ]
+    AccountRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
-export class AccountModule { }
+export class AccountModule {}

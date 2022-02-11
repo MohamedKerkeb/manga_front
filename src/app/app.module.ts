@@ -10,6 +10,7 @@ import { MangasComponent } from './pages/mangas/mangas.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { IconComponent } from './components/icon/icon.component';
 import { CardComponent } from './components/card/card.component';
+import { BibliComponent } from './pages/bibli/bibli.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CardComponent } from './components/card/card.component';
     MangasComponent,
     PageNotFoundComponent,
     IconComponent,
-    CardComponent
+    CardComponent,
+    BibliComponent
   ],
   imports: [
     BrowserModule,
