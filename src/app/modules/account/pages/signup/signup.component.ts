@@ -11,9 +11,13 @@ import { AuthService } from '../../services/auth.service';
 })
 export class SignupComponent implements OnInit {
   public signupForm: FormGroup;
+  public avatarArray: string[];
+  public avatar: any;
 
   constructor(private authService: AuthService, private router: Router) {
     this.signupForm = new FormGroup({});
+    this.avatarArray = [];
+    this.avatar = {};
   }
 
   ngOnInit(): void {
@@ -30,6 +34,12 @@ export class SignupComponent implements OnInit {
       ]),
       dobFc: new FormControl(''),
     });
+
+    this.authService.fetchAvatar().subscribe((res: any[]) => {
+      // console.log(res);
+      this.avatarArray = res;
+    });
+    console.log(this.avatarArray);
   }
   public onSubmit(): void {
     console.log('value : ', this.signupForm.value);
@@ -43,8 +53,10 @@ export class SignupComponent implements OnInit {
       password: passwordValue,
       username: usernameValue,
       date_of_birth: dobvalue,
+      avatar: this.avatar.idAvatar,
       role: ['user'],
     };
+    console.log(user);
     if (user.email !== '' && user.password !== '') {
       this.authService.signup(user).subscribe((resp) => {
         this.router.navigate(['account/signin']);
@@ -52,5 +64,11 @@ export class SignupComponent implements OnInit {
     } else {
       // affichage erreur
     }
+  }
+
+  public onClick(evt: any) {
+    console.log(evt);
+    this.avatar = evt;
+    console.log(this.avatar);
   }
 }

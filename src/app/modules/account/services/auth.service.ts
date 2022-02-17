@@ -37,4 +37,8 @@ export class AuthService {
     console.log('New User: ', newUser);
     return this.http.post(`${this.apiUrl}/api/auth/signup`, newUser);
   }
+
+  fetchAvatar(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/api/avatar`);
+  }
 }

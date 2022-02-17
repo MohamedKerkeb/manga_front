@@ -17,9 +17,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.CallApi.getData().subscribe((data: any[]) => {
-      console.log(data);
+      //console.log(data);
       this.tomes = data;
-      console.log(this.tomes);
+      //console.log(this.tomes);
     });
     //console.log(this.cover)
   }

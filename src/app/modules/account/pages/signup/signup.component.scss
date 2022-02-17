@@ -30,3 +30,15 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.avatar {
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid red;
+}
+
+.avatar:hover {
+  border: 1px solid rebeccapurple;
+  border-radius: 12px;
+}

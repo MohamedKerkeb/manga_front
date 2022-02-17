@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CallApiService {
-  tomesRecentUrl = 'http://localhost:8080/tomes/recents';
+  tomesRecentUrl = 'http://localhost:8080/api/tomes/recents';
 
-  mangaUrl = 'http://localhost:8080/manga';
+  mangaUrl = 'http://localhost:8080/api/manga';
 
   constructor(private http: HttpClient) {}
 
