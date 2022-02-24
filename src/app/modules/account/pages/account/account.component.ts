@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-account',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountComponent implements OnInit {
 
-  constructor() { }
+  currentUser: any;
+
+  constructor(private token: TokenService) { }
 
   ngOnInit(): void {
+    this.currentUser = this.token.getUserid()
   }
 
 }

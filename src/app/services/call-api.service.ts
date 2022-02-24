@@ -9,6 +9,7 @@ export class CallApiService {
   tomesRecentUrl = 'http://localhost:8080/api/tomes/recents';
 
   mangaUrl = 'http://localhost:8080/api/manga';
+  userUrl = 'http://localhost:8080/api/user'
 
   constructor(private http: HttpClient) {}
 
@@ -18,5 +19,9 @@ export class CallApiService {
   }
   getMangaById(id: any): Observable<any[]> {
     return this.http.get<any[]>(`${this.mangaUrl}/${id}`);
+  }
+
+  getTomeOfUser(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.userUrl}/1/tomes`)
   }
 }

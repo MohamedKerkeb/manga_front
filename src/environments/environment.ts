@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:8080',
-  tokenKey: 'TOKEN-LBP',
+  tokenKey: 'auth-token',
+  userKey: 'auth-user'
 };
 
 /*

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CallApiService } from 'src/app/services/call-api.service';
 
 @Component({
   selector: 'app-bibli',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BibliComponent implements OnInit {
 
-  constructor() { }
+  constructor(private callApi: CallApiService) { }
 
   ngOnInit(): void {
+    this.callApi.getTomeOfUser().subscribe((data: any[]) => {
+      console.log(data)
+    })
   }
 
 }
